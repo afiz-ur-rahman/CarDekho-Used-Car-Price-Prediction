@@ -6,9 +6,9 @@ A Streamlit web application is developed to allow users to input car details and
 
 Objective
 
-✔ Build an accurate ML model
-✔ Evaluate models and select best performer
-✔ Deploy price prediction as a web application
+Build an accurate ML model
+ Evaluate models and select best performer
+ Deploy price prediction as a web application
 
  Dataset
 
@@ -42,18 +42,18 @@ City
 
 Data Processing
 
-✔ Combined multi-city datasets
-✔ Converted JSON format to tabular data
-✔ Handled missing values
-✔ Removed outliers
-✔ Structured ML-ready dataset
+Combined multi-city dataset
+Converted JSON format to tabular data
+ Handled missing values
+ Removed outliers
+ Structured ML-ready dataset
 
  EDA
 
-✔ Price distribution
-✔ Year vs Price
-✔ Fuel & Transmission impact
-✔ Correlation heatmap
+ Price distribution
+ Year vs Price
+ Fuel & Transmission impact
+ Correlation heatmap
 
  Model Development
 
@@ -69,7 +69,7 @@ Gradient Boosting
 
 Random Forest Regressor
 
-📈 Final Accuracy
+ Final Accuracy
 
 R² Score: 0.89
 
