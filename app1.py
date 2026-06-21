@@ -25,7 +25,7 @@ with col1:
         "Model",
         sorted(df["Model"].unique())
     )
-
+  
     body_type = st.selectbox(
         "Body Type",
         sorted(df["Body_Type"].dropna().unique())
@@ -64,12 +64,14 @@ with col2:
     km = st.number_input(
         "Kilometers Driven",
         min_value=0,
+        max_value=int(df["KM"].max()),
         value=int(df["KM"].median())
     )
 
     engine_cc = st.number_input(
         "Engine CC",
         min_value=int(df["Engine_CC"].min()),
+        max_value=int(df["Engine_CC"].max()),
         value=int(df["Engine_CC"].median())
     )
 
@@ -113,3 +115,4 @@ if st.button("Predict Price"):
 # FOOTER
 st.write("---")
 st.write("Developed for Car Dheko Project | Machine Learning | Streamlit Deployment")
+
