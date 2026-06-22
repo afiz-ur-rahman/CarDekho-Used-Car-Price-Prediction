@@ -1,99 +1,182 @@
-Car Dheko - Used Car Price Prediction
-Project Overview
+# Car Dheko - Used Car Price Prediction
 
-This project focuses on predicting the selling price of used cars using Machine Learning techniques. A Random Forest Regression model was developed to estimate car prices based on vehicle specifications such as brand, model, fuel type, transmission, manufacturing year, kilometers driven, seating capacity, engine capacity, ownership history, and city.
+## Project Overview
 
-The trained model was deployed using Streamlit to provide real-time price predictions through a user-friendly web application.
+The Car Dheko Used Car Price Prediction project is an end-to-end Machine Learning application developed to estimate the selling price of used cars based on vehicle specifications. The project uses a Random Forest Regression model and provides real-time price predictions through a Streamlit web application.
 
-Problem Statement
+---
 
-Determining the fair market value of a used car is often challenging due to multiple influencing factors. The objective of this project is to develop a machine learning solution that can accurately predict used car prices and assist users in making informed buying and selling decisions.
+## Problem Statement
 
-Dataset Information
-Total Records: 8,369
-Target Variable: Price
-Features Used
-Brand
-Model
-Body_Type
-Fuel
-Transmission
-Owner_No
-Year
-KM
-Seats
-Engine_CC
-City
-Data Preprocessing
+Used car prices depend on several factors such as brand, model, fuel type, transmission type, manufacturing year, kilometers driven, engine capacity, ownership history, and city. The objective of this project is to develop a machine learning model that can accurately predict the price of a used car using these features.
 
-The following preprocessing techniques were applied:
+---
 
-Missing value handling using SimpleImputer
-Categorical feature encoding using OneHotEncoder
-Feature selection and preparation
-Data transformation using Scikit-Learn Pipelines
-Exploratory Data Analysis (EDA)
+## Dataset Information
 
-EDA was performed to understand:
+* Dataset Size: 8,369 Records
+* Target Variable: Price
 
-Brand-wise distribution
-Fuel type distribution
-Transmission analysis
-Manufacturing year trends
-Kilometers driven analysis
-City-wise vehicle distribution
-Price distribution patterns
-Machine Learning Model
-Algorithm Used
-Random Forest Regressor
-Model Parameters
-n_estimators = 300
-random_state = 42
-n_jobs = -1
-Model Evaluation
+### Features Used
 
-The model was evaluated using standard regression metrics.
+* Brand
+* Model
+* Body_Type
+* Fuel
+* Transmission
+* Owner_No
+* Year
+* KM
+* Seats
+* Engine_CC
+* City
 
-Results
-R² Score: 0.9333
-MAE (Mean Absolute Error): ₹142,613.41
+---
 
-The model achieved strong predictive performance and accurately estimated used car prices.
+## Project Workflow
 
-Model Deployment
+### 1. Data Cleaning & Preprocessing
 
-The trained model was saved using Joblib and deployed through a Streamlit application.
+* Combined datasets from multiple cities.
+* Handled missing values using SimpleImputer.
+* Encoded categorical features using OneHotEncoder.
+* Prepared structured data for machine learning.
 
-Application Features
-Brand Selection
-Model Selection
-Fuel Type Selection
-Transmission Selection
-Manufacturing Year Input
-Kilometers Driven Input
-Engine Capacity Input
-Seating Capacity Input
-City Selection
-Instant Price Prediction
-Technologies Used
-Python
-Pandas
-NumPy
-Scikit-Learn
-Joblib
-Streamlit
-Skills Demonstrated
-Data Cleaning and Preprocessing
-Exploratory Data Analysis (EDA)
-Feature Engineering
-Machine Learning Model Development
-Random Forest Regression
-Price Prediction Techniques
-Model Evaluation
-Model Optimization
-Model Deployment
-Streamlit Application Development
-Documentation and Reporting
-Conclusion
+### 2. Exploratory Data Analysis (EDA)
 
-This project successfully developed an end-to-end machine learning solution for used car price prediction. The Random Forest model achieved an R² Score of 0.9333 and was deployed using Streamlit, enabling users to obtain real-time car price estimates through an interactive web interface.
+Performed analysis to understand:
+
+* Brand Distribution
+* Fuel Type Distribution
+* Vehicle Price Distribution
+* Manufacturing Year Trends
+* Kilometers Driven Analysis
+* Correlation Heatmap
+
+### 3. Feature Selection
+
+Selected important features influencing used car prices:
+
+* Brand
+* Model
+* Body Type
+* Fuel Type
+* Transmission
+* Ownership History
+* Year
+* Kilometers Driven
+* Seating Capacity
+* Engine Capacity
+* City
+
+### 4. Machine Learning Model Development
+
+Algorithm Used:
+
+* Random Forest Regressor
+
+Model Configuration:
+
+* n_estimators = 300
+* random_state = 42
+* n_jobs = -1
+
+### 5. Model Evaluation
+
+Evaluation Metrics:
+
+* R² Score = 0.9333
+* MAE (Mean Absolute Error) = ₹142,613.41
+
+The model achieved strong predictive performance for used car price estimation.
+
+### 6. Model Deployment
+
+The trained model was saved using Joblib and deployed using Streamlit.
+
+Deployment Workflow:
+
+User Input → Model Prediction → Estimated Car Price
+
+### 7. Streamlit Application
+
+Features:
+
+* Brand Selection
+* Model Selection
+* Body Type Selection
+* Fuel Type Selection
+* Transmission Selection
+* Owner Number Input
+* Manufacturing Year Input
+* Kilometers Driven Input
+* Seating Capacity Input
+* Engine Capacity Input
+* City Selection
+* Real-Time Price Prediction
+
+---
+
+## Technologies Used
+
+* Python
+* Pandas
+* NumPy
+* Scikit-Learn
+* Joblib
+* Streamlit
+* Matplotlib
+* Seaborn
+
+---
+
+## Skills Demonstrated
+
+### Data Cleaning & Preprocessing
+
+Handled missing values and prepared data for machine learning.
+
+### Exploratory Data Analysis (EDA)
+
+Identified patterns, trends, and feature relationships using visualizations.
+
+### Feature Engineering
+
+Selected relevant features affecting used car prices.
+
+### Machine Learning Model Development
+
+Built and trained a Random Forest Regression model.
+
+### Price Prediction Techniques
+
+Implemented a regression-based price prediction system.
+
+### Model Evaluation
+
+Evaluated model performance using R² Score and MAE.
+
+### Model Deployment
+
+Deployed the trained model using Streamlit and Joblib.
+
+### Streamlit Application Development
+
+Created an interactive web application for real-time predictions.
+
+---
+
+## Results
+
+* R² Score: 0.9333
+* MAE: ₹142,613.41
+* Successfully deployed a real-time used car price prediction application.
+
+---
+
+## Conclusion
+
+This project successfully demonstrates the complete machine learning lifecycle, including data preprocessing, exploratory data analysis, feature engineering, model development, model evaluation, deployment, and web application development. The Random Forest model achieved strong predictive accuracy and was integrated into a Streamlit application for real-time user interaction.
+
+
+
