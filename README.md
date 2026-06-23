@@ -1,182 +1,196 @@
-# Car Dheko - Used Car Price Prediction
+# CarDekho Used Car Price Prediction
 
 ## Project Overview
 
-The Car Dheko Used Car Price Prediction project is an end-to-end Machine Learning application developed to estimate the selling price of used cars based on vehicle specifications. The project uses a Random Forest Regression model and provides real-time price predictions through a Streamlit web application.
+This project aims to predict the selling price of used cars using Machine Learning techniques. The dataset was collected from CarDekho and contains information such as car brand, model, fuel type, transmission type, year of manufacture, kilometers driven, engine capacity, seating capacity, and city.
+
+The project covers the complete Machine Learning workflow including data preprocessing, feature engineering, model development, model evaluation, and deployment using Streamlit.
 
 ---
 
 ## Problem Statement
 
-Used car prices depend on several factors such as brand, model, fuel type, transmission type, manufacturing year, kilometers driven, engine capacity, ownership history, and city. The objective of this project is to develop a machine learning model that can accurately predict the price of a used car using these features.
+Determining the correct price of a used car is a challenging task due to multiple influencing factors such as brand, age, mileage, engine specifications, and ownership history.
+
+The objective of this project is to build a machine learning model capable of accurately predicting used car prices based on vehicle attributes.
 
 ---
 
 ## Dataset Information
 
-* Dataset Size: 8,369 Records
+### Dataset Size
+
+* Total Records: 8,369
+* Features Used: 11
 * Target Variable: Price
 
-### Features Used
+### Features
 
-* Brand
-* Model
-* Body_Type
-* Fuel
-* Transmission
-* Owner_No
-* Year
-* KM
-* Seats
-* Engine_CC
-* City
+| Feature      | Description               |
+| ------------ | ------------------------- |
+| Brand        | Car manufacturer          |
+| Model        | Car model                 |
+| Body_Type    | Vehicle body type         |
+| Fuel         | Fuel type                 |
+| Transmission | Transmission type         |
+| Owner_No     | Number of previous owners |
+| Year         | Manufacturing year        |
+| KM           | Kilometers driven         |
+| Seats        | Seating capacity          |
+| Engine_CC    | Engine displacement       |
+| City         | City where car is listed  |
+
+### Target Variable
+
+* Price
 
 ---
 
-## Project Workflow
+## Data Preprocessing
 
-### 1. Data Cleaning & Preprocessing
+The following preprocessing steps were performed:
 
-* Combined datasets from multiple cities.
-* Handled missing values using SimpleImputer.
-* Encoded categorical features using OneHotEncoder.
-* Prepared structured data for machine learning.
+* Combined multiple city datasets
+* Converted nested JSON-like columns into dictionaries
+* Extracted useful attributes from nested data
+* Cleaned price values
+* Extracted numerical values from KM, Seats, and Engine specifications
+* Handled missing values using SimpleImputer
+* Encoded categorical features using OneHotEncoder
 
-### 2. Exploratory Data Analysis (EDA)
+---
 
-Performed analysis to understand:
+## Exploratory Data Analysis
 
-* Brand Distribution
-* Fuel Type Distribution
-* Vehicle Price Distribution
-* Manufacturing Year Trends
-* Kilometers Driven Analysis
-* Correlation Heatmap
+EDA techniques used:
 
-### 3. Feature Selection
+* Dataset inspection
+* Missing value analysis
+* Feature distribution analysis
+* Correlation analysis
+* Outlier identification
+* Feature relationship analysis
 
-Selected important features influencing used car prices:
+---
 
-* Brand
-* Model
-* Body Type
-* Fuel Type
-* Transmission
-* Ownership History
-* Year
-* Kilometers Driven
-* Seating Capacity
-* Engine Capacity
-* City
+## Machine Learning Models Evaluated
 
-### 4. Machine Learning Model Development
+### Linear Regression
 
-Algorithm Used:
+* R² Score: 0.5412
+* MAE: ₹435,648
 
-* Random Forest Regressor
+### Decision Tree Regressor
 
-Model Configuration:
+* R² Score: 0.9271
+* MAE: ₹170,105
 
-* n_estimators = 300
-* random_state = 42
-* n_jobs = -1
+### Random Forest Regressor
 
-### 5. Model Evaluation
+* R² Score: 0.9333
+* MAE: ₹142,613
 
-Evaluation Metrics:
+### Gradient Boosting Regressor
 
-* R² Score = 0.9333
-* MAE (Mean Absolute Error) = ₹142,613.41
+* R² Score: 0.9338
+* MAE: ₹210,577
 
-The model achieved strong predictive performance for used car price estimation.
+### Extra Trees Regressor (Final Model)
 
-### 6. Model Deployment
+* R² Score: 0.9712
+* MAE: ₹119,781
 
-The trained model was saved using Joblib and deployed using Streamlit.
+---
 
-Deployment Workflow:
+## Model Selection
 
-User Input → Model Prediction → Estimated Car Price
+Multiple regression algorithms were evaluated and compared using R² Score and Mean Absolute Error (MAE).
 
-### 7. Streamlit Application
+The Extra Trees Regressor achieved the highest predictive performance and was selected as the final model.
 
-Features:
+### Final Model
 
-* Brand Selection
-* Model Selection
-* Body Type Selection
-* Fuel Type Selection
-* Transmission Selection
-* Owner Number Input
-* Manufacturing Year Input
-* Kilometers Driven Input
-* Seating Capacity Input
-* Engine Capacity Input
-* City Selection
-* Real-Time Price Prediction
+* Algorithm: Extra Trees Regressor
+* Encoder: OneHotEncoder
+* R² Score: 0.9712
+* MAE: ₹119,781
 
 ---
 
 ## Technologies Used
 
+### Programming Language
+
 * Python
+
+### Libraries
+
 * Pandas
 * NumPy
 * Scikit-Learn
 * Joblib
 * Streamlit
-* Matplotlib
-* Seaborn
+
+---
+
+## Project Structure
+
+```text
+Car-Dekho-Price-Prediction/
+│
+├── data_preprocessing.py
+├── model_development.py
+├── app.py
+├── structured_car_data.csv
+├── car_price_model.pkl
+├── requirements.txt
+├── README.md
+│
+└── notebooks/
+```
+
+## Model Deployment
+
+The trained machine learning model was deployed using Streamlit.
+
+Users can:
+
+* Select car attributes
+* Enter vehicle specifications
+* Predict estimated used car price instantly
 
 ---
 
 ## Skills Demonstrated
 
-### Data Cleaning & Preprocessing
-
-Handled missing values and prepared data for machine learning.
-
-### Exploratory Data Analysis (EDA)
-
-Identified patterns, trends, and feature relationships using visualizations.
-
-### Feature Engineering
-
-Selected relevant features affecting used car prices.
-
-### Machine Learning Model Development
-
-Built and trained a Random Forest Regression model.
-
-### Price Prediction Techniques
-
-Implemented a regression-based price prediction system.
-
-### Model Evaluation
-
-Evaluated model performance using R² Score and MAE.
-
-### Model Deployment
-
-Deployed the trained model using Streamlit and Joblib.
-
-### Streamlit Application Development
-
-Created an interactive web application for real-time predictions.
+* Data Cleaning
+* Data Preprocessing
+* Feature Engineering
+* Exploratory Data Analysis
+* Categorical Encoding
+* Machine Learning Model Development
+* Model Evaluation
+* Model Comparison
+* Hyperparameter Optimization
+* Model Deployment
+* Streamlit Application Development
 
 ---
 
 ## Results
 
-* R² Score: 0.9333
-* MAE: ₹142,613.41
-* Successfully deployed a real-time used car price prediction application.
+The final Extra Trees Regressor model demonstrated excellent predictive performance:
+
+* R² Score: 0.9712
+* MAE: ₹119,781
+
+This indicates that the model can accurately estimate used car prices and generalizes well to unseen data.
 
 ---
 
 ## Conclusion
 
-This project successfully demonstrates the complete machine learning lifecycle, including data preprocessing, exploratory data analysis, feature engineering, model development, model evaluation, deployment, and web application development. The Random Forest model achieved strong predictive accuracy and was integrated into a Streamlit application for real-time user interaction.
+A complete end-to-end machine learning solution was developed for predicting used car prices using CarDekho data. After evaluating multiple regression algorithms, Extra Trees Regressor combined with OneHotEncoder delivered the best performance. The model was successfully deployed through Streamlit, enabling users to obtain real-time price predictions through an interactive web application.
 
 
 
